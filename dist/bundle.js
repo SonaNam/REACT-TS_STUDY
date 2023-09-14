@@ -1,0 +1,1 @@
+(()=>{"use strict";function n(n){return`Hello, ${n}!`}const e="MyApp",o="Alice",t="Sona Nam",$="Javascript!!";console.log(n(`${$}-${e}\n  -1.0-${t}\n  -${o}-30`)),document.getElementById("root").innerHTML=n(`${$}-${e}\n-1.0-${t}\n-${o}-30`)})();

@@ -26,10 +26,21 @@ interface Person {
   age?: number;
   
 }
-export const user : Person = {
+
+interface User extends Person {
+  nickname?: string;
+  printInfo? : () => void //함수
+}
+export const user : User = {
   name: "Alice",
   age: 30,
-  gendor: "female"
+  gendor: "female",
+  // User 인터페이스필드 속성 (property)
+  nickname: "Alice",
+  printInfo: () => {
+    console.log(user.nickname)
+    
+  }
 }
 
 function identity<T>(arg: T): T {

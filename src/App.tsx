@@ -39,6 +39,8 @@ const App = () => {
       </div>
       {/* React Props에 값을 대입 */}
       <WelcomeMessage name={"React Typescript"} />
+      {/* props-down , event-up */}
+      {/* 부모-자식 컴포넌트간 데이터 교환방법 */}
       <Button
         label="Click me!"
         color="primary"

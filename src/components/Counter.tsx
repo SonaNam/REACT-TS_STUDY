@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Alert from "./Alert";
 //  1. props와 state 둘 다 렌더링 결과물에 영향을 주는 변수
 //  2. props는 함수 매개변수 처럼 컴포넌트에 전달
@@ -39,22 +39,38 @@ const Counter = () => {
   const haddleAlertClosed = () => {
     setShowAlert(false);
   };
+
+  // 함수를 메모이징(memo-lsing)
+  // 함수의 현재 상태를 저장
+  // useCallBack(함수블록, 의존변수배열)
+  // 의존변수 배열의 값이 바뀔때만 함수를 재생성
+  const handleAlertClosed = useCallback(() => {
+    if (showAlert) {
+      setShowAlert(false);
+    }
+  }, [showAlert]);
   // 상태값 변경이나 컴포넌트 라이프사이클 변동에 따른 처리
   // useEffect(처리할함수, 의존변수배열)
   // 의존변수가 바뀌면 함수 블럭이 실행됨
   // 가장 처음에(의존변수가 초기화되는 시점)실행됨
   useEffect(() => {
     if (count != 0) {
-      console.log("----얼럿박스 표시 ---");
-      setShowAlert(true);
+      // console.log("----얼럿박스 표시 ---");
+      if (!showAlert) {
+        setShowAlert(true);
+      }
     }
-  }, [count]);
+  }, [count, showAlert]);
 
   return (
     <>
       {/* 조건부 렌더링 */}
       {showAlert && (
-        <Alert message="증가되었습니다" onClose={haddleAlertClosed} />
+        <Alert
+          // message={`증가되었습니다. 현재값: ${count}`}
+          message="증가되었습니다."
+          onClose={haddleAlertClosed}
+        />
       )}
       <div>
         <p>현재 카운트 : {count}</p>

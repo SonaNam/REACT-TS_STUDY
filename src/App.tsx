@@ -1,21 +1,18 @@
-import Counter from "./components/Counter";
-import Layout from "./components/Layout";
-import Todo from "./components/Todo";
-import WelcomeMessage from "./components/WelcomMessage";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Todo from "./modules/todo/Todo";
 
 const App = () => {
+  // 라우팅 처리하는 곳의 가장 최상위에 BrowserRouter 감싸줘야함
   return (
-    <>
-      <Counter />
-      <hr />
-      <Todo />
-      <hr />
-      <Layout title="Home Page">
-        {/* children 속성을 안쪽 태그에  */}
-        <WelcomeMessage name="Alice" />
-        <p>Welcome to our website!</p>
-      </Layout>
-    </>
+    <BrowserRouter>
+      <Routes>
+        {/* 컨텐츠 페이지 */}
+        <Route path="/" element={<Home />} index />
+        {/* 기능 모듈 */}
+        <Route path="/todo" element={<Todo />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 

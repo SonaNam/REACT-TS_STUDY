@@ -1,5 +1,5 @@
 import { MutableRefObject, useEffect, useRef, useState } from "react";
-import PostModifyModal from "./Postmodifymodal";
+import PostModifyModal from "./PostModifyModal";
 
 interface PostItem {
   title: string;

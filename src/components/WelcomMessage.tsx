@@ -1,4 +1,4 @@
-interface WelcomMessageProps {
+interface WelcomeMessageProps {
   name?: string;
 }
 
@@ -7,7 +7,7 @@ interface WelcomMessageProps {
 
 // React 컴포넌트는 매개변수를 객체로 받아야함
 // React Props: 함수의 객체형태 매개변수
-const WelcomeMessage = ({ name = "ChatGPT" }: WelcomMessageProps) => {
+const WelcomeMessage = ({ name = "ChatGPT" }: WelcomeMessageProps) => {
   // const name = "ChatGPT";
 
   // <></>: Fragment
@@ -18,13 +18,13 @@ const WelcomeMessage = ({ name = "ChatGPT" }: WelcomMessageProps) => {
   // return <></>;
   return (
     <div>
-      {/* 바인딩(bind): 데이터(변수값)을 템플릿에 출력 */}
+      {/* 바인딩(bind): 데이터(변수값)을 템플릿에 연결  */}
       {/* 리액트는 단방향 바인딩만 지원 코드 -> 템플릿 */}
       {/* {name}: jsx의 자바스크립트 표현식 */}
 
-      {/* jsx: 속성={값} */}
-      {/* jsx: 속성={{객체}}{{ color: "green" }} style 이 {{}} 이게 아님 */}
-      <h1 style={{ color: "green" }}>Welcome, {name}!</h1>
+      {/* jsx: 속성={값}  */}
+      {/* jsx: 속성={객체}  */}
+      <h1 style={{ color: "green" }}>Welcome, {name}! </h1>
       <p>This is an example of JSX in React.</p>
     </div>
   );

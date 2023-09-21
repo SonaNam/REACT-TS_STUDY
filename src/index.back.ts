@@ -11,17 +11,20 @@ import { appName, greet, user } from "./module";
 import metadata from "./module";
 
 // 타입 추론
-// const name = "Javascript!!!!";  
+// let name = "Javascript!!";
 
-// 타입선언
-let name : string;
+// 타입 선언
+let name: string;
 // name = 1;
-name = "Javascript!!!!";
+name = "Javascript";
 
 console.log(
-  greet(`${name}-${appName}
+  greet(
+    `${name}-${appName}
   -${metadata.version}-${metadata.creator}
-  -${user.name}-${user.age}`,"male")  // as 타입 : "male" 같은경우는 as가 안됨 타입으로 변환된 유니온이기때문에
+  -${user.name}-${user.age}`,
+    "male"
+  )
 );
 
 document.getElementById("root").innerHTML = greet(`${name}-${appName}

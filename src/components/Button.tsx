@@ -3,6 +3,7 @@ interface ButtonProps {
   color?: "primary" | "secondary";
   onClick?: () => void;
 }
+
 const Button = ({ label, color = "primary", onClick }: ButtonProps) => {
   const buttonStyle =
     color === "primary"
@@ -10,7 +11,7 @@ const Button = ({ label, color = "primary", onClick }: ButtonProps) => {
       : { backgroundColor: "gray" };
 
   const handleClick = (e: React.MouseEvent) => {
-    // HTML mouse event
+    // // html mouse event
     // e.nativeEvent
 
     // 속성(props)으로 넘어온 함수가 있으면 함수를 호출합니다

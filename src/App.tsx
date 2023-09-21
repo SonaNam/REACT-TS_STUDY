@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 // import Todo from "./modules/todo/Todo";
 import Layout from "./Layout";
 import { Suspense, lazy } from "react";
+import Post from "./modules/todo/Post/Post";
 
 const ContactSidebar = lazy(
   () => import("./modules/todo/contacts/ContactSidebar")
@@ -48,6 +49,7 @@ const App = () => {
           <Route element={<Home />} index />
           {/* 기능 모듈 */}
           <Route path="todo" element={<Todo />} index />
+          <Route path="Post" element={<Post />} index />
           {/* /contacts */}
           <Route path="contacts" element={<ContactSidebar />}>
             {/* /contacts */}

@@ -21,6 +21,9 @@ function Layout() {
           <li>
             <Link to="/contacts">Contacts</Link>
           </li>
+          <li>
+            <Link to="/Post">Post</Link>
+          </li>
         </ul>
       </nav>
       {/* 세부 화면들이 나오는 곳 */}

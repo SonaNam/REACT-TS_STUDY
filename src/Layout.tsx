@@ -1,9 +1,20 @@
 import { Suspense } from "react";
 import { Link, Outlet } from "react-router-dom";
+import { useProfileData } from "./modules/todo/frofile/data";
 
 function Layout() {
+  // swr 데이터 -> 상태값
+  // 데이터가 변경되면 컴포넌트가 다시 렌더링된다.
+  const { profiledata } = useProfileData();
+  const { nickname } = profiledata;
+  // console.log(profiledata);
+  console.log();
+
   return (
-    <div id="layout">
+    <div>
+      <header>
+        <em>{nickname}</em>
+      </header>
       {/* 링크들이 들어가는 곳 */}
       <nav>
         <ul style={{ display: "flex", gap: "40px" }}>
